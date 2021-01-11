@@ -90,10 +90,19 @@ function render(elem) {
   store.insertAdjacentHTML("afterbegin", elem);
 }
 
+function indexHandler(src) {
+  for (let i = 0; i <= productArray.length - 1; i++) {
+    if (productArray[i].querySelector("img").src == src) {
+      return (counter = i);
+    }
+  }
+}
+
 // Modal Zone-----------------------------------------------------
 
 //add modal window
 function modalHandler(e) {
+  indexHandler(e.src);
   let modalWindow = `      
 		<div class="modal-body">
 			<div>
